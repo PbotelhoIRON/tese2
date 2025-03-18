@@ -290,8 +290,14 @@ These values highlight the significant difference in measurement precision, rein
 \subsection{Spool Measurements and Specifications}
 \label{subsec:spool_measurements}
 
-To ensure precise assembly and proper clearance for the HPC blades, it is essential to define the key dimensions of the spool. The spool serves as the foundational structure for blade installation, and its dimensions directly impact the assembly process. Table~\ref{tab:spool_dimensions} presents the main geometric characteristics of the spool relevant to the blade assembly process.
+To ensure precise assembly and proper clearance for the HPC blades, it is essential to define the key dimensions of the spool. The spool serves as the foundational structure for blade installation, and its dimensions directly impact the assembly process. 
 
+These dimensions play a crucial role in determining the fit and function of the HPC blades. The slot width and depth directly influence how securely the blades are held in place, while the groove width and depth are vital for the proper installation of wire seals.
+Additionally, platform clearance values dictate the permissible gap between adjacent blades, ensuring compliance with operational specifications.
+
+The diameter measurements were obtained using a Peripheral tape on a previously used spool. 
+During the measuring process it was possible to differenciate two diferent spool diameteres per stage,$\varnothing Up$ and $\varnothing Down$, represented in Figure~\ref{fig:diam.png}.
+Table~\ref{tab:diameters} presents diameters measured.
 
 \begin{figure}[H]
     \centering
@@ -300,29 +306,25 @@ To ensure precise assembly and proper clearance for the HPC blades, it is essent
     \label{fig:diam.png}
 \end{figure}
 
+
 \begin{table}[h]
     \centering
-    \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
         \hline
-        Stage & ØUp & ØDown \\
+        Stage & ØUp [in] & ØDown [in] & ØUp [mm] & ØDown [mm]\\
         \hline
-        10 & 15.675 & 15.69 \\
-        9  & 15.704 & 15.66 \\
-        8  & 15.670 & 15.62 \\
-        7  & 15.620 & 15.69 \\
-        6  & 15.545 & 15.52 \\
+        10 & 15.675 & 15.69 & 398.145 & 398.526 \\
+        9  & 15.704 & 15.66 & 398.882 & 397.764 \\
+        8  & 15.670 & 15.62 & 398.018 & 396.748 \\
+        7  & 15.620 & 15.69 & 396.748 & 398.526 \\
+        6  & 15.545 & 15.52 & 394.843 & 394.208 \\
         \hline
     \end{tabular}
     \caption{Diameter values for each stage}
     \label{tab:diameters}
 \end{table}
 
-
-These dimensions play a crucial role in determining the fit and function of the HPC blades. The slot width and depth directly influence how securely the blades are held in place, while the groove width and depth are vital for the proper installation of wire seals. Additionally, platform clearance values dictate the permissible gap between adjacent blades, ensuring compliance with operational specifications.
-
 By integrating these spool measurements into the assembly process analysis, it is possible to predict and optimize the blade fitting conditions before final assembly, reducing rework and improving overall efficiency.
-
-
 
 \chapter{Design and Application of Tooling for CMM: Scanning, Point Cloud Processing, and Fixation System Modeling}
 \label{cha:digi}
