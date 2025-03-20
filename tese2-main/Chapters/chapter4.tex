@@ -187,7 +187,7 @@ Currently, in \gls{TAP}'s \gls{ME} Engine Shop assembly process, there is no met
 
 As a first step, it is necessary to construct a nominal model of the blades from which further work can be carried out. This model will serve as the foundation for predicting and controlling assembly clearances, ensuring compliance with specifications, and improving process efficiency.
 
-\subsection{Measurement Challenges and Limitations}
+\subsection{Defining Platform Tolerances and Tolerance Analysis Model for the Blade}
 \label{subsec:desafios}
 
 One of the primary challenges in ensuring proper assembly clearance is the precision required to construct a nominal model of the blades. The assembly clearance depends on the individual blade dimensions, particularly the platform width, as these factor determine how the blades fit within the spool slots. To develop an effective process, it is essential to establish a nominal blade model with a precision level derived from the permissible clearance tolerances.
@@ -209,8 +209,8 @@ where:
 
 This approach reduces the overall tolerance accumulation, making it more suitable for large-scale production where component variations follow a normal distribution. By applying this model, it is possible to maintain a precise nominal blade model while accommodating natural manufacturing variations.
 
-\subsection{Calculation of Platform Dimensional Tolerance for Each Blade Type and Stage}
-\label{subsec:clearance_calculation}
+\subsubsection{Calculation of Platform Dimensional Tolerance for Each Blade Type and Stage Using the statistical model}
+\label{subsubsec:clearance_calculation1}
 To evaluate the dimensional tolerance for each compressor stage, the number of wide and narrow blades assembled in the engine was analyzed. Table~\ref{tab:blade_distribution} presents the distribution of wide and narrow blades for each stage, along with the total number of blades.
 The assembly data was collected from a motor assembled in the workshop to determine the exact number of blades used.
 \begin{table}[h]
@@ -275,6 +275,57 @@ Based on this analysis, the clearance values were calculated. Table~\ref{tab:cle
 
 These calculations, derived from workshop data and statistical analysis, ensure that the clearance assessment aligns with real assembly conditions. Furthermore, they provide insight into the required precision needed to develop a nominal model that enables a feasible and applicable solution.
 
+\subsubsection{Calculation of Platform Dimensional Tolerance for Each Blade Type and Stage Using the Total Interchangeability Model}
+\label{subsubsec:clearance_calculation2}
+
+To assess the dimensional tolerance for each compressor stage under the total interchangeability model, we assume that all blades—wide and narrow—must individually conform to the overall assembly tolerance. This approach does not take into account statistical variations and instead assumes that each blade directly contributes to the total variation without reduction factors. The total interchangeability model represents a worst-case scenario and serves as a reference to highlight its impracticality compared to statistical models.
+
+Using the same distribution of wide and narrow blades from Table~\ref{tab:blade_distribution}, we analyze the tolerance requirement for each stage. The total tolerance allocation assumes that each blade's tolerance adds directly to the overall variation, leading to a simplified summation approach:
+
+\begin{equation}
+T_{\text{conj}} = (26 + 36) T_w = 62 T_w
+\end{equation}
+
+Given that the total assembly tolerance remains at 0.508 mm:
+
+\begin{equation}
+0.508 = 62 T_w
+\end{equation}
+
+Solving for :
+
+\begin{equation}
+T_w = \frac{0.508}{62} = 0.00819 \text{ mm}
+\end{equation}
+
+Thus, under the total interchangeability model, each blade in stage 6 would require an individual tolerance of approximately 0.00819 mm, which is significantly tighter than the 0.0646 mm derived from the statistical model.
+
+Applying the same method to other stages yields the results presented in Table~\ref{tab:clearance_interchangeability}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}ccc@{}}
+        \toprule
+        Stage & Clearance (mm) &  \newline (Total Interchangeability) \\
+        \midrule
+        6  & 0.508 & 0.00819    \\
+        7  & 0.508 & 0.00891    \\
+        8  & 0.508 & 0.00806    \\
+        9  & 0.508 & 0.00847    \\
+        10 & 0.508 & 0.00782    \\
+        \bottomrule
+    \end{tabular}
+    \caption{Computed clearance values per stage using total interchangeability.}
+    \label{tab:clearance_interchangeability}
+\end{table}
+
+These results clearly indicate that the total interchangeability model imposes unrealistically strict tolerances on each blade, making it practically infeasible for manufacturing and assembly. This reinforces the necessity of using statistical models to optimize tolerance allocation while maintaining feasible manufacturing constraints.
+
+As such, in this work, the statistical model was chosen as the reference for tolerance calculations, as it provides a more realistic and achievable approach while ensuring the necessary precision for assembly.
+
+\subsection{Analysis of Measurement Equipment Accuracy for Geometric Validation}
+\label{subsec:equipment_validation}
+
 Following this analysis, the next steps involve evaluating the available equipment previously mentioned in \ref{cha:lorem_ipsum}, specifically the Creaform HandySCAN 3D scanner and the Mitutoyo Euro-C 121210 \gls{CMM}. While the application of reverse engineering using the scanner enables the creation of a model, its lower accuracy on edges may compromise the precision required to resolve the problem. Therefore, it is necessary to use the CMM to obtain the geometry with the required accuracy. Additionally, the scanner enables the development of the CMM fixture, which will be designed using knowledge from previous dissertations.
 
 The accuracy of the available equipment is as follows:  
@@ -286,6 +337,10 @@ The accuracy of the available equipment is as follows:
 \end{itemize}
 
 These values highlight the significant difference in measurement precision, reinforcing the need for a combined approach to achieve the required accuracy.
+
+It is important to note that the CMM at TAP is currently inoperative (INOP), and during this project, TAP proceeded with the purchase of a new machine. However, to expedite the work, a machine was made available by the R\&D department of Hanon Systems, which will allow progress in the project and facilitate the measurement of the platform profile of the blades to properly define the dimensions required for the work
+
+Therefore, while the HandyScan may be useful for generating general models, the CMM will be the preferred equipment to ensure that the calculated tolerances, particularly values as small as 0.0646 mm (for stage 6), are met with precision. The combination of these tools will provide a robust and accurate approach to validating and controlling assembly tolerances, ensuring that the blades fit correctly and optimizing engine performance.
 
 \subsection{Spool Measurements and Specifications}
 \label{subsec:spool_measurements}
@@ -326,27 +381,60 @@ Table~\ref{tab:diameters} presents diameters measured.
 
 By integrating these spool measurements into the assembly process analysis, it is possible to predict and optimize the blade fitting conditions before final assembly, reducing rework and improving overall efficiency.
 
-\chapter{Design and Application of Tooling for CMM: Scanning, Point Cloud Processing, and Fixation System Modeling}
+\chapter{Scan, Point Cloud Processing, and CAD Model}
 \label{cha:digi}
 
-\section{Introduction}
-\label{sec:intro2}
 
-
-\section{Scanning of the Blades}
+\section{Scanning Process of the Compressor Blade}
 \label{sec:scan}
 
-programa utilizado no scan, tratamento 
-falar da falha no scan e dificuldade nas edges
+To generate an accurate digital model of the compressor blade, it was crucial to capture a complete and detailed point cloud of its geometry. Given the complex shape and critical role of the blade, a structured approach was followed to ensure precision in data acquisition and processing. The scanning process was designed to encompass all necessary surfaces while minimizing errors and distortions.
+
+The first step in the scanning process involved attaching positioning targets to a fixed table. A technician from the Dimensional Inspection department at \gls{TAP} carried out the scan using the Creaform HandyScan, a handheld 3D scanner. As represented in Figure~, the targets placed on the table provided reference points that enhanced accuracy and enabled precise alignment of the scans. By positioning the blade in different orientations, it was possible to capture data from multiple angles, ensuring complete surface coverage. The VXelements software utilized these positioning targets to align the scans more precisely.
+
+For this particular case, scanning was performed with the blade placed in two different positions. This ensured that all necessary surfaces were captured. After obtaining the individual scans, the merging process was conducted using the best-fit alignment method. This method, which employs an iterative closest point algorithm, minimizes the squared distances between overlapping scan points, thereby achieving a seamless integration of the different scans into a single mesh.
+
+During the scanning process, the reflective nature of the blade’s surface further complicated the scanning process, causing inconsistencies in data capture. In some cases, fine particles such as talcum powder can be applied to reduce reflections and improve scan quality. For the sixth stage blade scan an error also occurred in the scanning process that resulted in missing data from a non-functional surface of the blade. This missing data is represented in Figure~\ref{fig:zonadanf} with a blue mark. This issue was addressed within VXelements by performing mesh processing to refine and correct the scanned model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{zonadanf}
+    \caption{Missing data in Scan}
+    \label{fig:zonadanf}
+\end{figure}
+
+VXelements was utilized to remove unwanted points captured from the surrounding environment to enhance the final mesh quality. Furthermore, specific mesh processing tools were applied to address minor irregularities and fill non-critical gaps. However, it is important to note that the wide and narrow regions of the blade did not require scanning, as their impact on the overall accuracy was minimal. This aspect will be further elaborated in the Blade CAD Model Accuracy section.
+
+In summary, the scanning process for the compressor blade involved multiple viewpoints, best-fit merging, and mesh refinement to achieve a high-quality digital representation. Despite minor challenges, the final scans provided a reliable foundation for further CAD modeling and analysis. Figure~\ref{fig:scan1} presents the point cloud obtained from the scanning process of the Sixth Stage blade.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{scan1}
+    \caption{Stage 6 Point Cloud}
+    \label{fig:scan1}
+\end{figure}
 
 \section{Point Cloud Processing and CAD Model Creation}
 \label{sec:cad}
 
-xtract3d 
-Consideraçoes
+To generate the CAD model from the scanned data, the point cloud was processed and imported into SolidWorks using the Xtract3D add-in. This tool facilitated working directly with the point cloud by enabling reference geometry creation and surface sculpting based on the scanned data.
 
+Unlike traditional workflows where an STL file is imported as a surface body to optimize processing, Xtract3D allowed for direct manipulation of the point cloud without losing critical geometric information. This streamlined the modeling process, reducing the need for intermediate conversions and preserving the fidelity of the scanned data.
 
-\chapter{Design and Application of Tooling for CMM: Scanning, Point Cloud Processing, and Fixation System Modeling}
+Using the Xtract3D slice feature, cross-sections were extracted from the point cloud, as represented in Figure~. This allows guiding the creation of accurate profiles and lofted surfaces that replicated the original blade geometry with high precision. By leveraging these tools, the CAD model was refined iteratively to match the scanned data while ensuring manufacturability and compatibility with further analysis.
+
+The next section will discuss the accuracy assessment of the generated model in comparison to the scanned blade.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{compare.png}
+    \caption{Mesh and CAD Comparison}
+    \label{fig:compare.png}
+\end{figure}
+
+During this process some dimensional considerations where made.
+
+\chapter{Design and Application of Tooling for CMM: Fixation System Modeling}
 \label{cha:dig}
 
 

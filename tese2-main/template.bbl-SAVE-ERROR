@@ -19,43 +19,47 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{brochureleap}{article}{}{}
+    \entry{Aainsqatsi2008}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=40d7b2b2798c3953a356471bdb27aadc}{%
+           family={Aainsqatsi},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{fullhash}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{fullhashraw}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{bibnamehash}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{authorbibnamehash}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{authornamehash}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{authorfullhash}{40d7b2b2798c3953a356471bdb27aadc}
+      \strng{authorfullhashraw}{40d7b2b2798c3953a356471bdb27aadc}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 13-February-2025]}
+      \field{title}{Schematic Diagram of a 2-Spool, High-Bypass Turbofan Engine}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://commons.wikimedia.org/wiki/File:Turbofan_operation.png
+      \endverb
+      \verb{url}
+      \verb https://commons.wikimedia.org/wiki/File:Turbofan_operation.png
+      \endverb
+      \keyw{turbofan,high-bypass,engine,schematic}
+    \endentry
+    \entry{brochureleap}{misc}{}{}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labeltitlesource}{title}
-      \field{title}{Brochure_LEAPfiches_2017}
+      \field{note}{Brochure document}
+      \field{title}{Brochure LEAP fiches 2017}
+      \field{year}{2017}
     \endentry
-    \entry{comp}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=c9294fec757a1e0dcc9db0f9f18eb1da}{%
-           family={Cervenka},
-           familyi={C\bibinitperiod},
-           given={Michael},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{fullhash}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{fullhashraw}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{bibnamehash}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{authorbibnamehash}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{authornamehash}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{authorfullhash}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \strng{authorfullhashraw}{c9294fec757a1e0dcc9db0f9f18eb1da}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{[Online; accessed 07-february-2025]}
-      \field{title}{The Rolls-Roycs Trent Engine}
-      \verb{urlraw}
-      \verb https://www.phase-trans.msm.cam.ac.uk/mphil/Trent1/sld011.htm
-      \endverb
-      \verb{url}
-      \verb https://www.phase-trans.msm.cam.ac.uk/mphil/Trent1/sld011.htm
-      \endverb
-      \keyw{Tolls-Royce,Trent}
-    \endentry
-    \entry{aviaçaocomercial}{online}{}{}
+    \entry{aviacaocomercial}{online}{}{}
       \name{author}{1}{}{%
         {{hash=000ecc1ffbc1b266518fbf3e49b7fdb3}{%
            family={Comercial},
@@ -76,11 +80,11 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}
-      \field{note}{[Online; accessed 30-january-2025]}
-      \field{title}{Frota-TAP Air Portugal}
+      \field{note}{[Online; accessed 30-January-2025]}
+      \field{title}{Frota - TAP Air Portugal}
       \field{urlday}{1}
       \field{urlmonth}{12}
-      \field{urlyear}{2022}
+      \field{urlyear}{2024}
       \field{year}{2024}
       \field{urldateera}{ce}
       \verb{urlraw}
@@ -89,40 +93,99 @@
       \verb{url}
       \verb https://www.aviacaocomercial.net/frotatap.htm
       \endverb
-      \keyw{Tap,fleet}
+      \keyw{TAP,fleet}
+    \endentry
+    \entry{MTU_LEAP}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d866888c782de2a5fa85d839004158ff}{%
+           family={Engines},
+           familyi={E\bibinitperiod},
+           given={MTU\bibnamedelima Aero},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d866888c782de2a5fa85d839004158ff}
+      \strng{fullhash}{d866888c782de2a5fa85d839004158ff}
+      \strng{fullhashraw}{d866888c782de2a5fa85d839004158ff}
+      \strng{bibnamehash}{d866888c782de2a5fa85d839004158ff}
+      \strng{authorbibnamehash}{d866888c782de2a5fa85d839004158ff}
+      \strng{authornamehash}{d866888c782de2a5fa85d839004158ff}
+      \strng{authorfullhash}{d866888c782de2a5fa85d839004158ff}
+      \strng{authorfullhashraw}{d866888c782de2a5fa85d839004158ff}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 13-February-2025]}
+      \field{title}{LEAP-1A/-1B Commercial Aircraft Engines}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.mtu.de/engines/commercial-aircraft-engines/narrowbody-and-regional-jets/leap-1a/-1b/
+      \endverb
+      \verb{url}
+      \verb https://www.mtu.de/engines/commercial-aircraft-engines/narrowbody-and-regional-jets/leap-1a/-1b/
+      \endverb
+      \keyw{LEAP-1A,LEAP-1B,commercial aircraft engines}
     \endentry
     \entry{Farinha2021}{misc}{}{}
-      \name{author}{3}{}{%
+      \name{author}{2}{}{%
         {{hash=c86f6aef9afa3715a28ddd9d7b42992f}{%
            family={Farinha},
            familyi={F\bibinitperiod},
            given={Edgar\bibnamedelima Engrácio},
            giveni={E\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=6f2941acc38fa3c7ce4686dda93fdf2b}{%
-           family={José},
-           familyi={J\bibinitperiod},
-           given={Mário},
-           giveni={M\bibinitperiod}}}%
-        {{hash=3623256d46c1c08ddc5d3d4511ab2f84}{%
+        {{hash=aa86c98485b2107e56af21e6b87c3b3c}{%
            family={Santos},
            familyi={S\bibinitperiod},
-           given={Almeida},
-           giveni={A\bibinitperiod}}}%
+           given={Mário\bibnamedelimb José\bibnamedelima Almeida},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{cf202483582d38a8739df6ac837b344a}
-      \strng{fullhash}{cf202483582d38a8739df6ac837b344a}
-      \strng{fullhashraw}{cf202483582d38a8739df6ac837b344a}
-      \strng{bibnamehash}{cf202483582d38a8739df6ac837b344a}
-      \strng{authorbibnamehash}{cf202483582d38a8739df6ac837b344a}
-      \strng{authornamehash}{cf202483582d38a8739df6ac837b344a}
-      \strng{authorfullhash}{cf202483582d38a8739df6ac837b344a}
-      \strng{authorfullhashraw}{cf202483582d38a8739df6ac837b344a}
+      \strng{namehash}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{fullhash}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{fullhashraw}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{bibnamehash}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{authorbibnamehash}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{authornamehash}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{authorfullhash}{9f5b4b28acee62e6f2a1e66afd40809a}
+      \strng{authorfullhashraw}{9f5b4b28acee62e6f2a1e66afd40809a}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{FIXTURE DESIGN AND CMM PROGRAM DEVELOPMENT FOR MEASURING OF HIGH PRESSURE COMPRESSOR ROTOR BLADES Co-adviser: Mário Almeida Santos}
+      \field{note}{Co-adviser: Mário Almeida Santos}
+      \field{title}{Fixture Design and CMM Program Development for Measuring of High Pressure Compressor Rotor Blades}
       \field{year}{2021}
+    \endentry
+    \entry{Leeham_HighTurbine}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=5c8f2815689ffbeaa308f410be642625}{%
+           family={Fehrm},
+           familyi={F\bibinitperiod},
+           given={Björn},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c8f2815689ffbeaa308f410be642625}
+      \strng{fullhash}{5c8f2815689ffbeaa308f410be642625}
+      \strng{fullhashraw}{5c8f2815689ffbeaa308f410be642625}
+      \strng{bibnamehash}{5c8f2815689ffbeaa308f410be642625}
+      \strng{authorbibnamehash}{5c8f2815689ffbeaa308f410be642625}
+      \strng{authornamehash}{5c8f2815689ffbeaa308f410be642625}
+      \strng{authorfullhash}{5c8f2815689ffbeaa308f410be642625}
+      \strng{authorfullhashraw}{5c8f2815689ffbeaa308f410be642625}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 13-February-2025]}
+      \field{title}{Björn’s Corner: New engine development. Part 22: High turbine technologies}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://leehamnews.com/2024/08/30/bjorns-corner-new-engine-development-part-22-high-turbine-technologies/
+      \endverb
+      \verb{url}
+      \verb https://leehamnews.com/2024/08/30/bjorns-corner-new-engine-development-part-22-high-turbine-technologies/
+      \endverb
+      \keyw{engine development,turbine technologies,aircraft engines}
     \endentry
     \entry{RollsRoyce}{book}{}{}
       \name{author}{1}{}{%
@@ -149,7 +212,7 @@
       \field{labeltitlesource}{title}
       \field{edition}{Fifth}
       \field{isbn}{0902121235}
-      \field{title}{The jet engine}
+      \field{title}{The Jet Engine}
       \field{year}{2007}
     \endentry
     \entry{guerreiro}{misc}{}{}
@@ -172,9 +235,44 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{DEVELOPMENT OF A PROCESS TO MEASURE THE EXIT FLOW AREA OF THE LOW PRESSURE TURBINE NOZZLE FROM THE CFM56-5B ENGINE}
+      \field{note}{Thesis or internal report}
+      \field{title}{Development of a Process to Measure the Exit Flow Area of the Low Pressure Turbine Nozzle from the CFM56-5B Engine}
+      \field{year}{N/A}
     \endentry
-    \entry{718}{online}{}{}
+    \entry{novathesis-manual}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=419e7851ce9e726652864635d63207af}{%
+           family={Lourenço},
+           familyi={L\bibinitperiod},
+           given={João\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {NOVA University Lisbon}%
+      }
+      \strng{namehash}{419e7851ce9e726652864635d63207af}
+      \strng{fullhash}{419e7851ce9e726652864635d63207af}
+      \strng{fullhashraw}{419e7851ce9e726652864635d63207af}
+      \strng{bibnamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authorbibnamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authornamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authorfullhash}{419e7851ce9e726652864635d63207af}
+      \strng{authorfullhashraw}{419e7851ce9e726652864635d63207af}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{The NOVAthesis \LaTeX{} Template User's Manual}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://github.com/joaomlourenco/novathesis/raw/master/template.pdf
+      \endverb
+      \verb{url}
+      \verb https://github.com/joaomlourenco/novathesis/raw/master/template.pdf
+      \endverb
+      \keyw{novathesis-manual}
+    \endentry
+    \entry{inconel718}{online}{}{}
       \name{author}{1}{}{%
         {{hash=07d7147a6599574a19199a423fec0afb}{%
            family={Metals},
@@ -194,8 +292,12 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{[Online; accessed 06-february-2025]}
+      \field{note}{[Online; accessed 06-February-2025]}
       \field{title}{INCONEL 718 Alloy}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-718.pdf
       \endverb
@@ -203,6 +305,29 @@
       \verb https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-718.pdf
       \endverb
       \keyw{inconel,718,metal}
+    \endentry
+    \entry{TSM}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa23fb54f22f50995ae4bbe38af90aaf}{%
+           family={Mourão},
+           familyi={M\bibinitperiod},
+           given={António},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{fullhash}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{fullhashraw}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{bibnamehash}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{authorbibnamehash}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{authornamehash}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{authorfullhash}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \strng{authorfullhashraw}{aa23fb54f22f50995ae4bbe38af90aaf}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{UNIVERSIDADE NOVA DE LISBOA FACULDADE DE CIÊNCIAS E TECNOLOGIA DEPARTAMENTO DE ENGENHARIA MECÂNICA E INDUSTRIAL MESTRADO INTEGRADO EM ENGENHARIA MECÂNICA DIMENSIONAMENTO FUNCIONAL E TECNOLÓGICO}
+      \field{year}{2004}
     \endentry
     \entry{ESM}{book}{}{}
       \name{author}{1}{}{%
@@ -224,7 +349,7 @@
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Manual de Manutenção Oficinal LEAP1A - Hardware.}
+      \field{title}{Manual de Manutenção Oficinal LEAP1A - Hardware}
       \field{year}{2020}
     \endentry
     \entry{rendas2021fixture}{book}{}{}
@@ -252,7 +377,30 @@
       \field{pages}{1\bibrangedash 45}
       \range{pages}{45}
     \endentry
-    \entry{Shi2023}{misc}{}{}
+    \entry{renishaw2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=089690704b00db8b0aea86e45c8e476d}{%
+           family={Renishaw},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{089690704b00db8b0aea86e45c8e476d}
+      \strng{fullhash}{089690704b00db8b0aea86e45c8e476d}
+      \strng{fullhashraw}{089690704b00db8b0aea86e45c8e476d}
+      \strng{bibnamehash}{089690704b00db8b0aea86e45c8e476d}
+      \strng{authorbibnamehash}{089690704b00db8b0aea86e45c8e476d}
+      \strng{authornamehash}{089690704b00db8b0aea86e45c8e476d}
+      \strng{authorfullhash}{089690704b00db8b0aea86e45c8e476d}
+      \strng{authorfullhashraw}{089690704b00db8b0aea86e45c8e476d}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.renishaw.com/en/renishaw-enhancing-efficiency-in-manufacturing-and-healthcare--1030}}
+      \field{note}{Accessed: 2025-02-13}
+      \field{title}{Renishaw: Enhancing Efficiency in Manufacturing and Healthcare}
+      \field{year}{2025}
+    \endentry
+    \entry{Shi2023}{article}{}{}
       \name{author}{5}{}{%
         {{hash=a3a6ddf32b96c99874c9f76d86efa2cf}{%
            family={Shi},
@@ -295,18 +443,42 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The leading edges of aero-engine fan and compressor blades suffer from severe erosion due to the inhalation of suspended particulates in the low-altitude atmosphere during long-term transport. A small deformation of the leading edge can significantly change the aerodynamic performance under a strong non-linear effect, leading to increased operation and maintenance costs for engines. This review first focuses on leading-edge erosion morphology during service, and models of these damages. Secondly, the performance degradation caused by eroded leading edges on different classes of engine components, including airfoils, blades, compression systems, and the whole engine, are reviewed. Finally, optimization methods for eroded blade leading edges and their effects on performance recovery are summarized. This paper contributes to an in-depth understanding of the erosion mechanism of blade leading edges in terms of status and its effect, and is a good reference for establishing erosion leading edge repair methods and improving the level of automated repair.}
-      \field{issn}{19961073}
+      \field{issn}{1996-1073}
       \field{issue}{7}
       \field{journaltitle}{Energies}
-      \field{month}{4}
+      \field{month}{04}
       \field{title}{A Review on Leading-Edge Erosion Morphology and Performance Degradation of Aero-Engine Fan and Compressor Blades}
       \field{volume}{16}
       \field{year}{2023}
+      \field{pages}{3068}
+      \range{pages}{1}
       \verb{doi}
       \verb 10.3390/en16073068
       \endverb
       \keyw{aero engines,aerodynamic deterioration,eroded morphology,erosion model,leading-edge erosion,optimization,shock wave,thrust}
+    \endentry
+    \entry{trent1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9fcce577899d9044647875f8081eaee7}{%
+           family={Trent1},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{9fcce577899d9044647875f8081eaee7}
+      \strng{fullhash}{9fcce577899d9044647875f8081eaee7}
+      \strng{fullhashraw}{9fcce577899d9044647875f8081eaee7}
+      \strng{bibnamehash}{9fcce577899d9044647875f8081eaee7}
+      \strng{authorbibnamehash}{9fcce577899d9044647875f8081eaee7}
+      \strng{authornamehash}{9fcce577899d9044647875f8081eaee7}
+      \strng{authorfullhash}{9fcce577899d9044647875f8081eaee7}
+      \strng{authorfullhashraw}{9fcce577899d9044647875f8081eaee7}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.phase-trans.msm.cam.ac.uk/mphil/Trent1/sld011.htm}}
+      \field{note}{Accessed: 2025-02-13}
+      \field{title}{Axial Compressor and Turbine Operation}
+      \field{year}{n.d.}
     \endentry
   \enddatalist
 \endrefsection
