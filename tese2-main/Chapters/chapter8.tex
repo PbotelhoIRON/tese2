@@ -1,0 +1,115 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter4.tex
+%% NOVA thesis document file
+%%
+%% Chapter with lots of dummy text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE chapter4.tex}%
+
+\chapter{Tool Design for Blade Clearance Control}
+\label{cha:toolclear}
+
+
+Following the conclusions drawn in Section~6.1.4 regarding the actual contact points between blade platforms, it became necessary to verify whether the platform clearance measured during assembly (as illustrated in Figure~6.2) is indeed defined by these contact zones. To assess this, a comparative analysis was performed between the theoretical clearance—derived from nominal tolerances and the number of blades per stage, as listed in Table~6.2—and actual measurements taken from the same ten blades previously analyzed for contact geometry. This comparison aims to verify whether the observed clearance truly results from contact at the identified zones.
+
+
+\section*{Verification of Contact-Based Clearance}
+
+To confirm that the platform clearance measured during blade assembly (as shown in Figure~6.2) results from contact occurring at the extremities of the platform profiles—as identified in Section~6.1.4—it is necessary to compare the expected clearance arc with the geometric configuration of the assembly.
+
+Given:
+\begin{itemize}
+    \item Diameter: $D = 394.208$ mm
+    \item Perimeter: $p = \pi D = \pi \times 394.208 = 1238.441$ mm
+    \item Clearance: $0.508$ mm
+\end{itemize}
+
+\subsection*{Angle and Arc Estimation}
+
+First it is critical to understand if the clearance chord corresponds to the arc length between two blades:
+
+\[
+\text{Clearence Arc} = 0.508 \text{ mm}
+\]
+
+To find the corresponding angle $\theta$ (in radians):
+
+\[
+\text{Clearence Chord} = 2R \cdot \sin\left(\frac{\theta}{2}\right)
+\]
+
+
+\[
+0.508 = 394.208 \cdot \sin\left(\frac{\theta}{2}\right)
+\]
+
+\[
+\sin\left(\frac{\theta}{2}\right) = \frac{0.508}{394.208} = 1.28866 \times 10^{-3}
+\]
+
+\[
+\frac{\theta}{2} = \arcsin(1.28866 \times 10^{-3}) \Rightarrow \theta \approx 2.5773 \times 10^{-3} \text{ rad} \approx 0.147^\circ
+\]
+
+\[
+\text{Arc Lenght (mm)} = R~(\text{mm}) \cdot \theta~(\text{rad})
+\]
+
+\[
+\text{Clearence Arc Lenght} = \frac{394.208}{2} \cdot 2.5773 \times 10^{-3} = 0.508 \text{ mm}
+\]
+
+
+Therefore it is possible to assume that chord $\approx$ arc.
+
+\subsection*{Recalculation with Manufacturing Tolerances}
+
+Let:
+\begin{itemize}
+    \item $W = Wide Body Blade Arc Lenght$ mm 
+    \item $N = Narrow Body Blade Arc Lenght$ mm
+    \item $Lock = Lock Blade Arc Lenght$ mm
+\end{itemize}
+
+\[
+p' = p - \text{Clearance Arc Length} = 1238.441 - 0.508 = 1237.933~\text{mm}
+\]
+
+
+According to 
+
+\[
+1237.933 = 26W + 36N + 4 \text{Lock} \Rightarrow 1237.933 = 26(N + 0.254) + 36N + 4N
+\]
+
+\[
+N = 18.7465mm
+\]
+
+Chord Lenght associated to this value:
+
+\[
+18.7465 = \frac{394.208}{2} \cdot \theta \Rightarrow \theta = 0.0951 \text{ rad}
+\]
+
+\[
+\text{Chord} = 394.208 \cdot \sin\left(\frac{0.0951}{2}\right) \approx 18.7394 \text{ mm}
+\]
+
+
+\begin{table}[H]
+    \centering
+    \caption{Measured chord values (in mm) for Narrow and Wide Body blades.}
+    \begin{tabular}{cccc}
+        \hline
+        \textbf{Narrow Body Chord} & \textbf{(mm)} & \textbf{Wide Body Chord} & \textbf{(mm)} \\ \hline
+        Blade 1 & 18.73 & Blade 6 & 18.99 \\
+        Blade 2 & 18.65 & Blade 7 & 18.98 \\
+        Blade 3 & 18.74 & Blade 8 & 18.98 \\
+        Blade 4 & 18.76 & Blade 9 & 18.99 \\
+        Blade 5 & 18.72 & Blade 10 & 18.99 \\ \hline
+    \end{tabular}
+\end{table}
+
