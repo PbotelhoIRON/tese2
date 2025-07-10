@@ -16,28 +16,100 @@
 \section{Scanning Process of the Compressor Blade}
 \label{sec:scan}
 
-To generate an accurate digital model of the compressor blade, it was crucial to capture a complete and detailed point cloud of its geometry. Given the complex shape and critical role of the blade, a structured approach was followed to ensure precision in data acquisition and processing. The scanning process was designed to encompass all necessary surfaces while minimizing errors and distortions.
+The scanning of the compressor blade marked the initial phase of this work, aiming to generate a precise and detailed digital model of its complex geometry.
+The scanning process was designed to encompass all necessary surfaces while minimizing errors and distortions.
+Throughout this process, two main software tools were used: VXelements, for scan acquisition and initial alignment, and VXmodel, for advanced mesh editing and preparation for CAD reconstruction.
 
-The first step in the scanning process involved attaching positioning targets to a fixed table. A technician from the Dimensional Inspection department at \gls{TAP} carried out the scan using the Creaform HandyScan, a handheld 3D scanner. As represented in Figure~, the targets placed on the table provided reference points that enhanced accuracy and enabled precise alignment of the scans. By positioning the blade in different orientations, it was possible to capture data from multiple angles, ensuring complete surface coverage. The VXelements software utilized these positioning targets to align the scans more precisely.
-
-For this particular case, scanning was performed with the blade placed in two different positions. This ensured that all necessary surfaces were captured. After obtaining the individual scans, the merging process was conducted using the best-fit alignment method. This method, which employs an iterative closest point algorithm, minimizes the squared distances between overlapping scan points, thereby achieving a seamless integration of the different scans into a single mesh.
-
-During the scanning process, the reflective nature of the blade’s surface further complicated the scanning process, causing inconsistencies in data capture. In some cases, fine particles such as talcum powder can be applied to reduce reflections and improve scan quality. For the sixth stage blade scan an error also occurred in the scanning process that resulted in missing data from a non-functional surface of the blade. This missing data is represented in Figure~\ref{fig:zonadanf} with a blue mark. This issue was addressed within VXelements by performing mesh processing to refine and correct the scanned model.
+In the initial approach, a fixed table with pre-positioned targets was used, as shown in Figure~\ref{fig:setupinicial}, where the blade was placed and the operator moved around the part with the scanner, capturing different angles to ensure full surface coverage.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{zonadanf}
-    \caption{Missing data in Scan}
-    \label{fig:zonadanf}
+    \includegraphics[width=0.1\textwidth]{setupinicial}
+    \caption{Initial scanning setup with fixed table and stationary blade.}
+    \label{fig:setupinicial}
 \end{figure}
 
-VXelements was utilized to remove unwanted points captured from the surrounding environment to enhance the final mesh quality. Furthermore, specific mesh processing tools were applied to address minor irregularities and fill non-critical gaps. However, it is important to note that the wide and narrow regions of the blade did not require scanning, as their impact on the overall accuracy was minimal. This aspect will be further elaborated in the Blade CAD Model Accuracy section.
 
-In summary, the scanning process for the compressor blade involved multiple viewpoints, best-fit merging, and mesh refinement to achieve a high-quality digital representation. Despite minor challenges, the final scans provided a reliable foundation for further CAD modeling and analysis. Figure~\ref{fig:scan1} presents the point cloud obtained from the scanning process of the Sixth Stage blade.
+A technician from the Dimensional Inspection department at \gls{TAP} carried out the scan using the Creaform HandyScan, a handheld 3D scanner. 
+The targets placed on the table served as reference points for the scanner's software, allowing it to maintain continuous alignment and improve the overall accuracy of the scanning process.
+For this acquisition, a resolution of 0.008 inches was selected, although the HandyScan is capable of reaching a resolution as fine as 0.004 inches, the chosen setting was deemed sufficient to accurately capture the blade’s geometry without significantly increasing the scan duration or file size.
+
+For this first approach, scanning was performed with the blade placed in two different positions, as shown in Figure~\ref{fig:pospasinical}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{scan1}
+    \includegraphics[width=0.1\textwidth]{pospasinicial}
+    \caption{ Initial two blade positions used for scanning with the fixed table configuration.}
+    \label{fig:pospasinical}
+\end{figure}
+
+The scanning process began by placing the blade in its first orientation on the fixed table with the targets already positioned. 
+The scan was initiated in the VXelements software, and the operator proceeded to move the HandyScan 3D device manually around the blade, performing multiple passes to capture data from all visible surfaces. Throughout this stage, it was often necessary to adjust the scanner’s shutter speed in order to improve fluidity, reduce interruptions, and optimize surface acquisition in areas with challenging reflectivity.
+
+Once the scanning pass was complete, the acquisition was stopped both on the HandyScan device and within the software. 
+At this point, an initial cleanup was performed: the scan was filtered to remove noise, eliminate unwanted data such as the table, the targets, or stray reflections, and retain only a clean point cloud of the blade. This initial scan was saved, and a visual assessment was made to identify any areas of the blade geometry that were still missing or insufficiently captured.
+
+The blade was then repositioned to expose the previously hidden surfaces, and a new scanning session was started. The process was repeated a second time.
+
+Once both cleaned scans were available, an attempt was made to align them using the automatic best-fit alignment method. However, due to insufficient overlap or surface complexity, this method failed to produce a correct result. To overcome this, the software's manual alignment feature was used, which allows the selection of up to five corresponding points between the two scans. These user-defined reference points served as a basis for the alignment, enabling the software to successfully register the scans and merge them into a coherent and continuous point cloud.
+
+The best-fit alignment method employs an iterative closest point algorithm, minimizes the squared distances between overlapping scan points, thereby achieving a seamless integration of the different scans into a single mesh.
+
+After merging the individual scans into a single point cloud within VXelements, the dataset was exported to VXmodel for more advanced mesh processing. In this environment, dedicated tools were used to correct potential mesh defects such as irregularities, spikes, and holes. Once all scans were successfully merged into a continuous mesh, a global cleaning operation was performed to remove any extraneous points that did not belong to the blade geometry, including data captured unintentionally from the rotating table.
+To address incomplete areas resulting from scanning limitations, the Fill Holes command was applied to reconstruct missing regions and generate a closed surface. This refined and watertight mesh served as a reliable foundation for developing the CAD model of the blade.
+
+During the initial scanning attempts, several issues were encountered that impacted the completeness and efficiency of the process. Firstly, the operator was not given clear guidance on which surfaces of the blade were most critical to capture. As a result, the focus was placed predominantly on the airfoil region, while the platform areas were not sufficiently covered. This led to missing sections in the platform, which had to be reconstructed artificially during mesh processing in the post-scan phase.
+One specific issue occurred during the scan of the sixth stage blade, where a non-functional surface was not properly captured. This was due to limited visibility in the two scanning orientations used in the initial setup, resulting in missing data in that region, as shown in Figure~\ref{fig:zonadanif} with a red mark.
+Additionally, the highly reflective surface of the blade posed significant challenges for the scanner, especially in capturing fine details on certain faces. 
+The fixed nature of the scanning table also introduced limitations, as the operator had to move around the part manually, often with constrained access and suboptimal scanning angles.
+In some cases, fine particles such as talcum powder can be applied to reduce reflections and improve scan quality, although this method was not used in the present process.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{zonadanif00}
+    \caption{ Missing surface area in the sixth stage blade scan.}
+    \label{fig:zonadanif}
+\end{figure}
+
+In light of these difficulties, a change in the scanning strategy was implemented. 
+A new setup was introduced using a rotative table with integrated targets, allowing the blade to be rotated smoothly while the scanner remained in a stable position, as shown in Figure~\ref{fig:setupfinal}. 
+This change improved both the fluidity of the scan and the consistency of surface acquisition. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.1\textwidth]{setupfinal}
+    \caption{Final scanning setup with rotative table and integrated targets.}
+    \label{fig:setupfinal}
+\end{figure}
+
+
+Furthermore, the number of scanning stages was increased from two to three, allowing for more thorough coverage of the entire blade geometry and ensuring that critical areas, such as the platform, were adequately captured.
+To specifically address the missing surface in the sixth stage blade, the third scanning position was performed with the blade placed vertically on the table surface, improving visibility and ensuring full data acquisition in that region.
+The three scanning positions used in this final configuration are illustrated in Figure~\ref{fig:pospasfinal}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.1\textwidth]{pospasfinal}
+    \caption{ Final three blade positions used in the revised scanning approach.}
+    \label{fig:pospasfinal}
+\end{figure}
+
+Finally, it should be noted that the leading and trailing edges of the blade exhibit several irregularities in the resulting mesh, as shown in Figure~\ref{fig:snapshot}. 
+Due to the extremely thin geometry of these regions, the scan resolution did not produce a sufficiently dense set of points to represent them smoothly, resulting in a jagged and discontinuous appearance. 
+Although these edges are relevant to the scope of this work, the observed irregularities do not critically affect the overall objectives. 
+This limitation will be addressed and corrected in the following chapter, where the CAD reconstruction process is detailed.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{snapshot00}
+    \caption{ Irregularities in the leading and trailing edges of the scanned mesh caused by limited point density.}
+    \label{fig:snapshot}
+\end{figure}
+
+In summary, the scanning process for the compressor blade involved multiple orientations, manual alignment using best-fit techniques, and detailed mesh refinement to obtain a high-quality digital representation. Despite some limitations and challenges, the resulting scans provided a robust and accurate basis for subsequent CAD modeling and geometric analysis. Figure~\ref{fig:scan1} shows the point cloud obtained from the scanning of the sixth stage blade.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{scan1}
     \caption{Stage 6 Point Cloud}
     \label{fig:scan1}
 \end{figure}

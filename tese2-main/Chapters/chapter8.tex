@@ -112,7 +112,7 @@ Repeated measurements are mostly recommended when evaluating the measurement sys
 
 \subsection{Estimating Process Tolerance}
 
-knowing the number of measurements needed per stage, the following step is measuring new \gls{HPC} blades available on \gls{TAP}'s engine shop.
+Knowing the number of measurements needed per stage, the following step is measuring new \gls{HPC} blades available on \gls{TAP}'s engine shop.
 For each blade group, the sample mean \(\bar{x}\) and standard deviation \(s\) were computed. Assuming normality in the data distribution, the process tolerance can estimated as:
 
 \[
@@ -170,7 +170,73 @@ Tables~\ref{tab:mean_tolerance_narrow} and~\ref{tab:mean_tolerance_wide} present
     \end{tabular}
 \end{table}
 
-As discussed in Section~\ref{subsec:desafios}, the tolerance allowed for each blade at each stage, as shown in Table~\ref{tab:cleareance}, is always larger than the tolerance estimated in this chapter, making it a solid and admissible estimation.
+As discussed in Section~\ref{subsec:desafios}, the tolerance allowed for each blade at each stage, as shown in Table~\ref{tab:clearance}, is always larger than the tolerance estimated in this chapter, making it a solid and admissible estimation.
+Thus, it can be also concluded that the nominal chord length of the blade platform corresponds to the mean value presented in the tables.
+
+Considering the mass production of these blades, and as previously mentioned, these tolerances must be analyzed through the statistical method. This approach assumes that the measurements of a specific dimension within a batch of parts follow a normal distribution. By analyzing, for example, an engine assembled in the workshop, and considering the number of wide and narrow blades per stage, it is possible to assess the potential dimensional variation of the blade set. The number of blades assembled per stage, as shown in Table~\ref{tab:number_of_blades}, provides a clear overview of the blade distribution, which is essential for understanding the dimensional variability in the assembly process."
+
+\begin{table}[H]
+    \centering
+    \caption{Number of Wide and Narrow Body Blades per Stage}
+    \label{tab:number_of_blades}
+    \begin{tabular}{ccc}
+        \hline
+        \textbf{Stage} & \textbf{Wide Body Blades} & \textbf{Narrow Body Blades} \\
+        \hline
+        Stg 6 & 36 & 26 \\
+        Stg 7 & 33 & 24 \\
+        Stg 8 & 39 & 24 \\
+        Stg 9 & 37 & 23 \\
+        Stg 10 & 38 & 26 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{equation}
+\text{TolC} = \sqrt{T_N^2 \cdot N + T_W^2 \cdot W}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \label{eq:tolc}
+    \item \( T_N \) is the tolerance associated with narrow blades.
+    \item \( N \) is the number of narrow blades.
+    \item \( T_W \) is the tolerance associated with wide blades.
+    \item \( W \) is the number of wide blades.
+    \item \( \text{TolC} \) represents the total combined tolerance, taking into account the individual tolerances of both narrow and wide blades, as well as the number of blades of each type.
+\end{itemize}
+
+Applying equation~\ref{eq:tolc}, it is possible to evaluate whether the total dimensional variation at each stage remains within acceptable limits for the assembly process. 
+Table~\ref{tab:dimensional variation} presents the calculated dimensional variation for each stage, showing a significant deviation in Stage 6, followed by substantially lower and consistent values in the subsequent stages, suggesting a stable manufacturing process.
+
+\begin{table}[H]
+    \centering
+    \caption{Total dimensional variation per stage}
+    \label{tab:dimensional variation}
+    \begin{tabular}{cc}
+        \hline
+        \textbf{Stage} & \textbf{Dimensional Variation} \\
+        \hline
+        Stg 6 &         \\
+        Stg 7 &  0.223  \\
+        Stg 8 & 0.254   \\
+        Stg 9 & 0.247   \\
+        Stg 10 & 0.259  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+To determine manufacturing tolerances, the manufacturing methods of the parts were analyzed to understand the limitations of the manufacturer. 
+It was also considered whether other supplied parts, which are equally critical, have tighter tolerances and which IT levels correspond to these fundamental tolerances.
+
+For example, regarding the \gls{LPT} shaft, although the manufacturing dimensions are not available, the operational limits for the parts provided by the manufacturer are known. 
+For this part, the inner diameters have operational tolerances of 0.004 mm, which implies that the manufacturing tolerances must be tighter to ensure the part remains operational. 
+Assuming a safety coefficient of 2, a manufacturing tolerance of 0.002 mm can be assumed. 
+By analyzing the table of fundamental tolerances and considering that this diameter falls within the range of 180 mm to 250 mm, it corresponds to an IT01 classification, the minimal tolerance for such dimensions. 
+This highlights the level of manufacturing precision that the producer is capable of.
+
 
 \subsection{Conversion from Chord to Arc}
 
@@ -204,140 +270,61 @@ However, to ensure dimensional precision in the tool design, the arc length is c
         \hline
         6 & 20.383 & 0.032 & 18.992 & 0.032 \\
         7 & 20.383 & 0.032 & 20.626 & 0.029 \\
-        8 & 18.598 & 0.047 & 18.853 & 0.035 \\
-        9 & 19.498 & 0.042 & 19.761 & 0.029 \\
+        8 & 18.598 & 0.030 & 18.853 & 0.031 \\
+        9 & 19.498 & 0.030 & 19.761 & 0.029 \\
         10 & 18.291 & 0.032 & 18.541 & 0.033 \\
         \hline
     \end{tabular}
 \end{table}
 
 
+\subsection{Spool diameter Tolerancing}
 
-\subsection{Application to Calha Inspection}
-
-As the combination of wide and narrow blades per stage is not fixed and may vary in each assembly, it is not practical to define a single reference value for total blade row length. Instead, the effective arc length of the blades arranged in the calha is compared against a statistically determined acceptance interval.
-
-The expected total length is given by:
-
-\[
-L = n_W \cdot \bar{x}_W + n_N \cdot \bar{x}_N
-\]
-
-The combined standard deviation is:
-
-\[
-\sigma_{\text{total}} = \sqrt{n_W \cdot s_W^2 + n_N \cdot s_N^2}
-\]
-
-The total tolerance becomes:
-
-\[
-T_{\text{total}} = 6 \cdot \sigma_{\text{total}}
-\]
-
-Therefore, the measured arc length in the calha is considered acceptable if it falls within:
-
-\[
-[L - \frac{T_{\text{total}}}{2} , \; L + \frac{T_{\text{total}}}{2}]
-\]
-
-This approach accommodates dimensional dispersion and variability in blade configurations, offering a robust verification method aligned with practical quality control strategies.
-
-
-\section{Verification of Contact-Based Clearance}
-
-To confirm that the platform clearance measured during blade assembly (as shown in Figure~6.2) results from contact occurring at the extremities of the platform profiles as identified in Section~6.1.4 it is necessary to compare the expected clearance arc with the geometric configuration of the assembly.
-
-Given:
-\begin{itemize}
-    \item Diameter: $D = 394.208$ mm
-    \item Perimeter: $p = \pi D = \pi \times 394.208 = 1238.441$ mm
-    \item Clearance: $0.508$ mm
-\end{itemize}
-
-\subsection*{Angle and Arc Estimation}
-
-First it is critical to understand if the clearance chord corresponds to the arc length between two blades:
-
-\[
-\text{Clearence Arc} = 0.508 \text{ mm}
-\]
-
-To find the corresponding angle $\theta$ (in radians):
-
-\[
-\text{Clearence Chord} = 2R \cdot \sin\left(\frac{\theta}{2}\right)
-\]
-
-
-\[
-0.508 = 394.208 \cdot \sin\left(\frac{\theta}{2}\right)
-\]
-
-\[
-\sin\left(\frac{\theta}{2}\right) = \frac{0.508}{394.208} = 1.28866 \times 10^{-3}
-\]
-
-\[
-\frac{\theta}{2} = \arcsin(1.28866 \times 10^{-3}) \Rightarrow \theta \approx 2.5773 \times 10^{-3} \text{ rad} \approx 0.147^\circ
-\]
-
-\[
-\text{Arc Lenght (mm)} = R~(\text{mm}) \cdot \theta~(\text{rad})
-\]
-
-\[
-\text{Clearence Arc Lenght} = \frac{394.208}{2} \cdot 2.5773 \times 10^{-3} = 0.508 \text{ mm}
-\]
-
-
-Therefore it is possible to assume that chord $\approx$ arc.
-
-\subsection*{Recalculation with Manufacturing Tolerances}
-
-Let:
-\begin{itemize}
-    \item $W = Wide Body Blade Arc Lenght$ mm 
-    \item $N = Narrow Body Blade Arc Lenght$ mm
-    \item $Lock = Lock Blade Arc Lenght$ mm
-\end{itemize}
-
-\[
-p' = p - \text{Clearance Arc Length} = 1238.441 - 0.508 = 1237.933~\text{mm}
-\]
-
-
-According to 
-
-\[
-1237.933 = 26W + 36N + 4 \text{Lock} \Rightarrow 1237.933 = 26(N + 0.254) + 36N + 4N
-\]
-
-\[
-N = 18.7465mm
-\]
-
-Chord Lenght associated to this value:
-
-\[
-18.7465 = \frac{394.208}{2} \cdot \theta \Rightarrow \theta = 0.0951 \text{ rad}
-\]
-
-\[
-\text{Chord} = 394.208 \cdot \sin\left(\frac{0.0951}{2}\right) \approx 18.7394 \text{ mm}
-\]
-
+In order to accurately define the measurement process of the blade platforms, it is also essential to consider the potential dimensional variation of the spool on which the blades are mounted. 
+Since this component is not readily available in large quantities at the TAP engine maintenance facility, only two spools were available throughout the course of this dissertation. 
+The measurements were taken on the blade platform side of the spool, specifically in the region where blade-to-blade contact occurs, as illustrated in Figure~5.3 and referred to as the Diameter Up.
 
 \begin{table}[H]
     \centering
-    \caption{Measured chord values (in mm) for Narrow and Wide Body blades.}
-    \begin{tabular}{cccc}
+    \caption{Spool measurements for engines 418 and 463}
+    \label{tab:spool_measurements}
+    \begin{tabular}{cc|cc}
         \hline
-        \textbf{Narrow Body Chord} & \textbf{(mm)} & \textbf{Wide Body Chord} & \textbf{(mm)} \\ \hline
-        Blade 1 & 18.73 & Blade 6 & 18.99 \\
-        Blade 2 & 18.65 & Blade 7 & 18.98 \\
-        Blade 3 & 18.74 & Blade 8 & 18.98 \\
-        Blade 4 & 18.76 & Blade 9 & 18.99 \\
-        Blade 5 & 18.72 & Blade 10 & 18.99 \\ \hline
+        \multicolumn{2}{c|}{\textbf{in}} & \multicolumn{2}{c}{\textbf{mm}} \\
+        \textbf{418} & \textbf{463} & \textbf{418} & \textbf{463} \\
+        \hline
+        15.550 & 15.550 & 394.970  & 394.970  \\
+        15.615 & 15.615 & 396.621  & 396.621  \\
+        15.677 & 15.677 & 398.1958 & 398.1958 \\
+        15.704 & 15.705 & 398.8816 & 398.9070 \\
+        15.690 & 15.688 & 398.5260 & 398.4752 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Given that only two components were available, it was not possible to carry out a statistical analysis similar to the one performed for the blades. As such, a fundamental tolerance grade was assumed to define the dimensional variation of the spool, based on tolerances applied to diameter-related dimensions in other critical components.
+
+For example, in the case of the \gls{LPT} shaft, although the exact manufacturing dimensions are not available, the operational limits provided by the manufacturer are known. For this part, the inner diameters have an operational tolerance of 0.004 mm, which implies that the manufacturing tolerance must be even tighter to ensure the part remains functional under operating conditions. Assuming a safety factor of 2, a manufacturing tolerance of 0.002 mm can be considered reasonable.
+
+By consulting the table of fundamental tolerances and noting that this diameter falls within the range of 180 mm to 250 mm, it corresponds to an IT01 grade, the tightest standard tolerance for that size range. This demonstrates the high level of manufacturing precision achievable by the supplier.
+
+Taking this into account, it is reasonable to adopt an IT grade for the spool diameter in order to address the dimensional variation in the absence of a sufficiently large sample size. By assuming an IT3 classification, which is considerably less strict than the tolerance estimated for the \gls{LPT} shaft, the spool diameters can be associated with a manufacturing tolerance of approximately 0.013 mm.
+
+The corresponding nominal dimensions and assumed tolerances are presented in Table~\ref{tab:spool_nominal_tolerance}.
+
+\begin{table}[H]
+    \centering
+    \caption{Nominal spool diameters and assumed manufacturing tolerance (IT3)}
+    \label{tab:spool_nominal_tolerance}
+    \begin{tabular}{cc}
+        \hline
+        \textbf{Nominal Diameter [mm]} & \textbf{Tolerance [mm]} \\
+        \hline
+        394.970 & ±0.0065 \\
+        396.621 & ±0.0065 \\
+        398.1958 & ±0.0065 \\
+        398.8816 & ±0.0065 \\
+        398.5260 & ±0.0065 \\
+        \hline
     \end{tabular}
 \end{table}
