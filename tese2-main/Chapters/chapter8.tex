@@ -170,37 +170,38 @@ Tables~\ref{tab:mean_tolerance_narrow} and~\ref{tab:mean_tolerance_wide} present
     \end{tabular}
 \end{table}
 
-As discussed in Section~\ref{subsec:desafios}, the tolerance allowed for each blade at each stage, as shown in Table~\ref{tab:clearance}, is always larger than the tolerance estimated in this chapter, making it a solid and admissible estimation.
-Thus, it can be also concluded that the nominal chord length of the blade platform corresponds to the mean value presented in the tables.
 
-Considering the mass production of these blades, and as previously mentioned, these tolerances must be analyzed through the statistical method. This approach assumes that the measurements of a specific dimension within a batch of parts follow a normal distribution. By analyzing, for example, an engine assembled in the workshop, and considering the number of wide and narrow blades per stage, it is possible to assess the potential dimensional variation of the blade set. The number of blades assembled per stage, as shown in Table~\ref{tab:number_of_blades}, provides a clear overview of the blade distribution, which is essential for understanding the dimensional variability in the assembly process."
+As discussed in Section~\ref{subsec:desafios}, the tolerance allowed for each blade at each stage, as shown in Table~\ref{tab:clearance}, is always larger than the tolerance estimated in this chapter, making it a solid and admissible estimation. Thus, it can also be concluded that the nominal chord length of the blade platform corresponds to the mean value presented in the tables.
+
+Considering the mass production of these blades, and as previously mentioned, these tolerances must be analyzed through the statistical method. This approach assumes that the measurements of a specific dimension within a batch of parts follow a normal distribution. By analyzing, for example, an engine assembled in the workshop, and considering the number of wide, narrow, and lock blades per stage, it is possible to assess the potential dimensional variation of the blade set. The number of blades assembled per stage, as shown in Table~\ref{tab:number_of_blades}, provides a clear overview of the blade distribution, which is essential for understanding the dimensional variability in the assembly process.
 
 \begin{table}[H]
     \centering
-    \caption{Number of Wide and Narrow Body Blades per Stage}
+    \caption{Number of Wide, Narrow, and Lock Blades per Stage}
     \label{tab:number_of_blades}
-    \begin{tabular}{ccc}
+    \begin{tabular}{cccc}
         \hline
-        \textbf{Stage} & \textbf{Wide Body Blades} & \textbf{Narrow Body Blades} \\
+        \textbf{Stage} & \textbf{Wide Blades} & \textbf{Narrow Blades} & \textbf{Lock Blades} \\
         \hline
-        Stg 6 & 36 & 26 \\
-        Stg 7 & 33 & 24 \\
-        Stg 8 & 39 & 24 \\
-        Stg 9 & 37 & 23 \\
-        Stg 10 & 38 & 26 \\
+        Stg 6 & 36 & 22 & 4 \\
+        Stg 7 & 33 & 20 & 4 \\
+        Stg 8 & 39 & 20 & 4 \\
+        Stg 9 & 37 & 19 & 4 \\
+        Stg 10 & 38 & 22 & 4 \\
         \hline
     \end{tabular}
 \end{table}
 
 \begin{equation}
-\text{TolC} = \sqrt{T_N^2 \cdot N + T_W^2 \cdot W}
+\text{TolC} = \sqrt{T_N^2 \cdot (N + L) + T_W^2 \cdot W}
 \end{equation}
 
 Where:
 \begin{itemize}
     \label{eq:tolc}
-    \item \( T_N \) is the tolerance associated with narrow blades.
+    \item \( T_N \) is the tolerance associated with both narrow and lock blades (same value).
     \item \( N \) is the number of narrow blades.
+    \item \( L \) is the number of lock blades.
     \item \( T_W \) is the tolerance associated with wide blades.
     \item \( W \) is the number of wide blades.
     \item \( \text{TolC} \) represents the total combined tolerance, taking into account the individual tolerances of both narrow and wide blades, as well as the number of blades of each type.
@@ -208,6 +209,7 @@ Where:
 
 Applying equation~\ref{eq:tolc}, it is possible to evaluate whether the total dimensional variation at each stage remains within acceptable limits for the assembly process. 
 Table~\ref{tab:dimensional variation} presents the calculated dimensional variation for each stage, showing a significant deviation in Stage 6, followed by substantially lower and consistent values in the subsequent stages, suggesting a stable manufacturing process.
+
 
 \begin{table}[H]
     \centering
@@ -218,25 +220,13 @@ Table~\ref{tab:dimensional variation} presents the calculated dimensional variat
         \textbf{Stage} & \textbf{Dimensional Variation} \\
         \hline
         Stg 6 &         \\
-        Stg 7 &  0.223  \\
-        Stg 8 & 0.254   \\
-        Stg 9 & 0.247   \\
-        Stg 10 & 0.259  \\
+        Stg 7 &  0.239  \\
+        Stg 8 & 0.263   \\
+        Stg 9 & 0.237   \\
+        Stg 10 & 0.268  \\
         \hline
     \end{tabular}
 \end{table}
-
-
-
-To determine manufacturing tolerances, the manufacturing methods of the parts were analyzed to understand the limitations of the manufacturer. 
-It was also considered whether other supplied parts, which are equally critical, have tighter tolerances and which IT levels correspond to these fundamental tolerances.
-
-For example, regarding the \gls{LPT} shaft, although the manufacturing dimensions are not available, the operational limits for the parts provided by the manufacturer are known. 
-For this part, the inner diameters have operational tolerances of 0.004 mm, which implies that the manufacturing tolerances must be tighter to ensure the part remains operational. 
-Assuming a safety coefficient of 2, a manufacturing tolerance of 0.002 mm can be assumed. 
-By analyzing the table of fundamental tolerances and considering that this diameter falls within the range of 180 mm to 250 mm, it corresponds to an IT01 classification, the minimal tolerance for such dimensions. 
-This highlights the level of manufacturing precision that the producer is capable of.
-
 
 \subsection{Conversion from Chord to Arc}
 
@@ -328,3 +318,140 @@ The corresponding nominal dimensions and assumed tolerances are presented in Tab
         \hline
     \end{tabular}
 \end{table}
+
+
+\section{Tool Design}
+
+Building on the conclusions drawn from the statistical analysis of the blade platforms in the previous section, this chapter addresses the design of a tool for controlling blade clearance. 
+The primary objective of this tool is to measure the sum of the chord lengths of all blades per stage, facilitating the prediction of whether the assembled set meets the required clearance for optimal operation, in accordance with the established operational limits.
+
+The design process will incorporate nominal tolerances, estimated blade configurations, and dimensional analysis of the spool diameter, guaranteeing accurate control over the final clearance during assembly.
+
+\subsection{Material}
+
+The aim of this section is to determine the material to be used for manufacturing the tool, which will be machined on a CNC machine. In order to make an informed decision, several factors must be considered, including cost, weight, and machinability.
+
+The selection of aluminum for the tool is based on its superior machinability, reduced tool wear, and high-speed cutting capability compared to steels and other harder materials. 
+Aluminum allows significantly higher cutting speeds while maintaining good dimensional accuracy and excellent surface finish. Its lower hardness, high thermal conductivity, and resistance to built-up edge formation make it ideal for processes where precision and surface integrity are critical. 
+Furthermore, its widespread availability and compatibility with various surface treatments make it an economically efficient and technically versatile material for tooling applications \cite{Rahman2023AluminumMachinability}.
+
+Among the available aluminum alloys, the 6000 series is highlighted in the literature as offering a favorable balance between strength, corrosion resistance, and machinability. 
+Specifically, alloy 6061 is identified as a reliable option due to its good mechanical properties and consistent cutting behavior, making it a suitable and well-established choice for both structural and precision-machined components \cite{Rahman2023AluminumMachinability}.
+
+Although PTFE (Teflon) was also considered as an alternative material, a comparison of the component weights shows that the aluminum version weighs 7168.82 grams, while the PTFE version weighs 6159.88 grams. 
+The relatively small difference in mass demonstrates that the aluminum tool remains light enough to be easily handled and transported by the operator, while offering significantly better mechanical robustness and durability compared to PTFE.
+
+
+\section{Design Considerations}
+
+One of the key aspects to consider when defining the most suitable tool design is the geometry of the dovetail sections of the blades. 
+Since the blades are secured to the tool via these dovetail interfaces, their dimensional characteristics play a critical role in ensuring a proper fit and functional engagement.
+
+To characterize this geometry, ten blades were measured from each stage. For each blade, four key dimensions of the dovetail were recorded: A, B, C, and D. 
+These correspond respectively to the upper width, lower width, total height, and lateral offset of the dovetail profile.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{dovetaildim}
+\caption{Schematic representation of the dovetail geometry and its key dimensions (A, B, C, D).}
+\label{fig:dovetails}
+\end{figure}
+
+Figure~\ref{fig:dovetails} illustrates the progressive variation in dovetail geometry across different stages of the system. 
+The dimensions labeled A, B, C, and D refer respectively to the upper width, lower width, height, and lateral offset of each dovetail segment. 
+
+
+Table~\ref{tab:dovetail_dimensions} summarizes the measured values for each geometric parameter from stage 6 to stage 10. 
+As observed, dimension A decreases consistently from 8.20 mm at stage 7 to 6.70 mm at stage 10, indicating a narrowing of the top surface. Similarly, dimension C (height) follows a downward trend, supporting a compact design. 
+Dimension B and D exhibit more variability, potentially reflecting design adaptations for mechanical engagement or alignment tolerance.
+
+\begin{table}[H]
+    \centering
+    \caption{Dovetail dimensions across different stages}
+    \label{tab:dovetail_dimensions}
+    \begin{tabular}{ccccc}
+        \hline
+        \textbf{Stage} & \textbf{A (mm)} & \textbf{B (mm)} & \textbf{C (mm)} & \textbf{D (mm)} \\
+        \hline
+        6  & --   & --   & --    & --    \\
+        7  & 8.20 & 4.90 & 13.60 & 2.70  \\
+        8  & 7.70 & 5.30 & 12.70 & 1.80  \\
+        9  & 6.90 & 4.15 & 11.00 & 1.90  \\
+        10 & 6.70 & 4.73 & 10.20 & 2.10  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The engagement between the blade and the tool is defined by dimension C. Therefore, the fit between both parts must be carefully selected to ensure accurate chord measurements. 
+The goal is to allow the blades to be inserted manually into the tool and to slide along it with minimal resistance, while still limiting excessive clearance that could compromise the accuracy of the measurements. 
+According to \cite{TabelaAjustesMecanicos}, for medium mechanical precision and a sliding fit, the recommended tolerances are H8 for the hole and h8 or h9 for the shaft.
+
+In addition to the dovetail geometry, another critical consideration in the design of the tool is the definition of the operational limits for the sum of the blade chords within the slot. These limits are essential for establishing the acceptable dimensional range to be used during blade inspection and tool setup.
+
+To define these operational limits, a combined reasoning approach was followed:
+
+Firstly, the dimensional variation of the spool was considered. 
+By analyzing the maximum and minimum values of the spool perimeter (Pmax and Pmin) for each stage, and subtracting the maximum and minimum admissible clearances, a functional tolerance window was obtained. 
+This defines the upper and lower bounds for the sum of blade chords to be accepted within the tool.
+
+Secondly, it was necessary to account for the geometric transition from arc to chord. 
+In the engine, blades are arranged along a circular arc, whereas in the tool, they are positioned linearly. 
+Since the number of blades per stage is known, but not the exact combination of narrow, wide. 
+This involved calculating the maximum total reduction between arc length and chord length across all blades in a stage, which was then subtracted from the spool perimeter to reflect the actual linear dimension that the chord sum must comply with.
+
+Figure~\ref{fig:imagemtolerancias} illustrates this rationale, showing how the functional interval for the acceptable chord sum was derived by combining perimeter-based variation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{imagemtolerancias}
+\caption{Functional tolerance window for the total blade chord length, based on spool perimeter limits adjusted by clearance allowances and arc-to-chord transformation.}
+\label{fig:imagemtolerancias}
+\end{figure}
+
+Table~\ref{tab:admissible_limits} presents the final admissible limits obtained for each stage, considering both clearance requirements and arc-to-chord transformation effects.
+
+\begin{table}[H]
+    \centering
+    \caption{Admissible limits for the total blade chord length per stage}
+    \label{tab:admissible_limits}
+    \begin{tabular}{ccc}
+        \hline
+        \textbf{Stage} & \textbf{Min (mm)} & \textbf{Max (mm)} \\
+        \hline
+        6  & 1244.030 & 1244.479 \\
+        7  & 1249.135 & 1249.582 \\
+        8  & 1254.176 & 1254.624 \\
+        9  & 1254.548 & 1254.996 \\
+        10 & 1251.619 & 1252.068 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Based on all the considerations previously discussed, a first version of the tool was developed as a single-piece component.
+
+The tolerances applied to the defined fit for the slots are shown in Figure~\ref{fig:calhav1}, which provides an overall view of the tool. The detailed technical drawing of the slot is presented in Figure~\ref{fig:anexo_2d_calhav1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{calhav1}
+\caption{First Tool Design.}
+\label{fig:calhav1}
+\end{figure}
+
+
+\section{Prototype Manufacturing}
+
+Following the definition of the final geometry and tolerances for the tool, the next step involved the construction of a physical prototype. 
+The aim was to validate the design assumptions and assess the feasibility of the manufacturing process, as well as the functionality of the tool in practical terms.
+
+
+
+
+
+
+
+
+
+
+

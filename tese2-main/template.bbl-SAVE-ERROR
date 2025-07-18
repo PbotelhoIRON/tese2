@@ -352,6 +352,79 @@
       \field{title}{Manual de Manutenção Oficinal LEAP1A - Hardware}
       \field{year}{2020}
     \endentry
+    \entry{Rahman2023AluminumMachinability}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=c24c007f6f99b313a0819f063375cd69}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={M.\bibnamedelimi M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=39cfb90038debc967f60df41876a0d3b}{%
+           family={Yusoff},
+           familyi={Y\bibinitperiod},
+           given={A.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=277f0fad8642db34ef05952a7b72a4dd}{%
+           family={Wahab},
+           familyi={W\bibinitperiod},
+           given={N.\bibnamedelimi A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3b4701c85be5c295fa6a097fffcb6e2d}{%
+           family={Aziz},
+           familyi={A\bibinitperiod},
+           given={M.\bibnamedelimi S.\bibnamedelimi Abdul},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=104d82ea31cee7d8c2983596970bf556}{%
+           family={Kasim},
+           familyi={K\bibinitperiod},
+           given={K.\bibnamedelimi A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=53958b8d22e92bc84356c71c37bbb7cb}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={M.\bibnamedelimi N.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6c5710eacf1412d59a5f1ed5914c338d}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={R.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0a295169c232e3443bfe679cded4263a}{%
+           family={Sarhan},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi A.\bibnamedelimi D.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=eb9c49c5a013f5f31076a43245a443d3}{%
+           family={Sulaiman},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1808fa9fd4760ba7ad9351794fefacf9}
+      \strng{fullhash}{72fc1d389635ae97cc8f0a49d2a0eb0b}
+      \strng{fullhashraw}{72fc1d389635ae97cc8f0a49d2a0eb0b}
+      \strng{bibnamehash}{1808fa9fd4760ba7ad9351794fefacf9}
+      \strng{authorbibnamehash}{1808fa9fd4760ba7ad9351794fefacf9}
+      \strng{authornamehash}{1808fa9fd4760ba7ad9351794fefacf9}
+      \strng{authorfullhash}{72fc1d389635ae97cc8f0a49d2a0eb0b}
+      \strng{authorfullhashraw}{72fc1d389635ae97cc8f0a49d2a0eb0b}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Materials Today: Proceedings}
+      \field{title}{Review of improvement of machinability and surface integrity in machining on aluminum alloys}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.1016/j.matpr.2023.06.143
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.matpr.2023.06.143
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.matpr.2023.06.143
+      \endverb
+    \endentry
     \entry{rendas2021fixture}{book}{}{}
       \name{author}{1}{}{%
         {{hash=37ca0f0dcbaec798e8041533d0f7a039}{%
@@ -456,6 +529,18 @@
       \verb 10.3390/en16073068
       \endverb
       \keyw{aero engines,aerodynamic deterioration,eroded morphology,erosion model,leading-edge erosion,optimization,shock wave,thrust}
+    \endentry
+    \entry{TabelaAjustesMecanicos}{misc}{}{}
+      \list{organization}{1}{%
+        {Instituto Superior de Engenharia ou similar}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Documento interno}
+      \field{note}{Consultado em 2025}
+      \field{title}{Tabela de Ajustes Mecânicos}
+      \field{year}{s.d.}
     \endentry
     \entry{trent1}{misc}{}{}
       \name{author}{1}{}{%
